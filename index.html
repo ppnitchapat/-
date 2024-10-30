@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>แนะนำอาหาร</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>แนะนำอาหาร</h1>
+  <div id="test"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>กินอะไรดี</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f8f9fa;
+    }
+    .container {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+    }
+    h1 {
+      color: #28a745;
+    }
+    .btn {
+      background-color: #28a745;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2em;
+      margin-top: 15px;
+    }
+    .btn:hover {
+      background-color: #218838;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #343a40;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>กินอะไรดี?</h1>
+    <button class="btn" id="suggestButton">แนะนำอาหาร</button>
+    <div id="result">กดปุ่มเพื่อสุ่มเมนูอาหาร</div>
+  </div>
+
+  <script>
+    const menu = [
+      "ผัดไทย", "ก๋วยเตี๋ยว", "ส้มตำ", "แกงเขียวหวาน", "ข้าวผัด", 
+      "ผัดกะเพรา", "ข้าวมันไก่", "ข้าวหมูแดง", "ข้าวหน้าเป็ด", "สุกี้",
+      "ข้าวไข่เจียว", "ข้าวขาหมู", "หมูปิ้ง", "ลูกชิ้นทอด", "ปอเปี๊ยะสด",
+      "ยำวุ้นเส้น", "ก๋วยจั๊บ", "ราดหน้า", "ข้าวต้ม", "ปลาทอด", 
+      "ข้าวแกง", "ข้าวซอย", "ตำถั่ว", "บะหมี่เกี๊ยว", "ข้าวหมกไก่"
+    ];
+
+    function randomMenu() {
+      const randomIndex = Math.floor(Math.random() * menu.length);
+      return menu[randomIndex];
+    }
+
+    document.getElementById("suggestButton").onclick = function() {
+      document.getElementById("result").innerText = randomMenu();
+    };
+  </script>
+</body>
+</html>
